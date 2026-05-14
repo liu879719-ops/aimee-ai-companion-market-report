@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI 陪伴赛道技术实现报告</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <nav class="topnav"><a class="" href="index.html">首页</a><a class="" href="user_voice.html">用户声音</a><a class="" href="user_profile.html">用户画像</a><a class="" href="industry_experience.html">同行经验</a><a class="active" href="tech_implementation.html">技术实现</a><a class="" href="market_commercialization.html">市场与商业化</a><a class="" href="risk_compliance.html">风险合规</a></nav>
+  <header class="hero">
+    <div class="eyebrow">AI Companion Research</div>
+    <h1>AI 陪伴赛道技术实现报告</h1>
+    <p>从用户体验倒推 AI 陪伴产品必须具备的自然对话、长期记忆、语音、主动问候和人设稳定能力。</p>
+  </header>
+  <main class="page">
+    
+<section class="toc"><strong>页面目录</strong><a href="#summary">核心结论</a><a href="#dialogue">对话自然度</a><a href="#memory">长期记忆</a><a href="#voice">语音/通话</a><a href="#proactive">主动问候</a><a href="#persona">人设稳定</a><a href="#cost">成本与性能</a><a href="#priority">技术优先级</a><a href="#evidence">原素材示例</a><a href="#sources">信息来源</a></section>
+<section class="card highlight"><h2>核心结论</h2><p>这次已读取桌面“技术实现”文件夹。新资料显示，AI 陪伴不是单靠一个大模型就能做好，而是“对话模型 + 长期记忆 + 角色表达约束 + 主动行为系统 + 多模态接口 + 成本控制”的组合工程。Aimee 当前最应该优先投入的是长期记忆、人设稳定、自然对话和主动关心的底层机制。</p></section>
+<section class="card "><h2>对话自然度</h2><p>技术截图中明确提醒：只把“温柔、冷酷、幽默”等抽象标签写进 system prompt，角色差异会很弱。更有效的是约束具体表达方式，例如句子长短、换行频率、口语程度、解释倾向、是否用括号表达内心等。结合用户评论看，Aimee 的自然感不应只追求“聪明”，而要追求“像一个稳定的人在和我说话”。</p><ul><li>把人格设定拆成表达风格、行为禁忌、关系边界、记忆调用方式。</li><li>建立反客服味、反说教、反复读的回复测试集。</li><li>不同场景使用不同对话策略：睡前陪伴、低落倾诉、撒娇恋爱、轻松闲聊不能同一套话术。</li></ul></section>
+<section class="card "><h2>长期记忆 / 记忆墙</h2><p>桌面技术资料给出了较完整的记忆架构：身份层不放具体记忆，只放人格、价值观、说话方式和行为规则；叙事层保存主题化的长期语义记忆；关键事件和摘要层保存完整事件记录、时间地点和对话摘要；完整对话归档用于追溯。另一张截图进一步提出四层存储：高层概览、关键事件、对话摘要、完整归档，并配合实体索引、Profile 路由、自动去重、闪光灯记忆、检索强化和情绪匹配。</p><table><thead><tr><th>层级</th><th>作用</th><th>Aimee 应用</th></tr></thead><tbody><tr><td>身份层</td><td>人格、说话方式、行为规则</td><td>保证 Aimee 不因模型更新而变成另一个人。</td></tr><tr><td>叙事层</td><td>喜好、关系、共同梗、长期状态</td><td>支撑“TA 真的了解我”的关系感。</td></tr><tr><td>关键事件层</td><td>重要节点、冲突、承诺、纪念日</td><td>支撑关系推进、回忆和会员权益。</td></tr><tr><td>摘要/归档层</td><td>对话摘要和完整记录</td><td>用于纠错、回溯和个性化检索。</td></tr></tbody></table></section>
+<section class="card "><h2>语音回复 / 语音通话</h2><p>AIRI 开源资料展示了 7x24 在线陪伴、Discord/Telegram 聊天、实时语音、VRM/Live2D 等多模态方向。对 Aimee 来说，语音和通话能提升真实陪伴，但不是第一天必须做复杂实时通话。更务实的路径是先做短语音回复和睡前语音陪伴，再进入实时通话。</p><ul><li>语音人格必须和文字人格一致。</li><li>先控制延迟和音色稳定，再做更重的通话时长。</li><li>语音适合做会员权益，但不适合过度按秒收费。</li></ul></section>
+<section class="card "><h2>主动问候</h2><p>Life Tick 截图提出，AI 不应只是“用户发一句我回一句”的响应器，而应该有自己的生活节奏。系统可以每 15-180 分钟运行一次状态 tick，让角色判断当前活动、心情、是否主动联系用户、消息类型和下次触发时间。Aimee 可以把这个能力用于早安、睡前、长时间未打开、用户情绪低落后的低打扰召回。</p></section>
+<section class="card "><h2>角色人设稳定性</h2><p>多张技术截图都指向同一个问题：用户愿意投射情感，但非常怕 OOC、串台和“突然不像 TA”。Aimee 需要把人设稳定做成工程指标，而不是只靠提示词运气。</p><ul><li>每个角色建立表达约束和禁忌清单。</li><li>上线前跑固定人格回归测试。</li><li>模型或 prompt 更新要灰度，避免老用户感觉伴侣被换掉。</li></ul></section>
+<section class="card "><h2>成本与性能压力</h2><p>长期记忆资料明确指出，成本主要集中在向量检索、长上下文、摘要与合并。另一张截图提到群聊可以先做“发言门控”，让角色判断是否该说话，避免所有角色一起回复并降低成本。Aimee 当前即使先做 1v1，也要把成本结构设计清楚：哪些记忆每次必须带入，哪些只在相关场景召回。</p></section>
+<section class="card "><h2>技术优先级建议</h2><table id="priority"><thead><tr><th>优先级</th><th>能力</th><th>为什么</th></tr></thead><tbody><tr><td>P0</td><td>自然回复与反说教</td><td>决定首聊转化和情绪安全。</td></tr><tr><td>P0</td><td>四层长期记忆 + 去重/纠错</td><td>决定关系信任和留存。</td></tr><tr><td>P0</td><td>人设表达约束和回归测试</td><td>避免 OOC、串台和模型更新背叛感。</td></tr><tr><td>P1</td><td>Life Tick 主动问候</td><td>增强召回和“TA 有自己的生活”的真实感。</td></tr><tr><td>P1</td><td>短语音回复/睡前语音</td><td>提升沉浸感和会员价值，但需要控制延迟与成本。</td></tr><tr><td>P2</td><td>多角色群聊发言门控</td><td>适合后续扩展，不是 Aimee 首阶段核心。</td></tr></tbody></table></section>
+<section id="evidence" class="card"><h2>原素材示例</h2><div class="evidence-grid"><article class="evidence-card"><a href="assets/evidence/26_tech_airi_open_source.jpg" target="_blank"><img src="assets/evidence/26_tech_airi_open_source.jpg" alt="AIRI 开源 AI 伴侣资料"></a><h4>AIRI 开源 AI 伴侣资料</h4><p>用于展示 7x24 陪伴、实时语音、Discord/Telegram、VRM/Live2D 等多模态技术路线。</p><small>来源：桌面/技术实现/b39f6d6fbc206fa5c1aab403a046201d.jpg</small></article><article class="evidence-card"><a href="assets/evidence/27_tech_memory_arch_v3_cover.jpg" target="_blank"><img src="assets/evidence/27_tech_memory_arch_v3_cover.jpg" alt="AI 陪伴记忆架构 v3"></a><h4>AI 陪伴记忆架构 v3</h4><p>用于说明长期记忆量增长和去重/更新机制是工程难点。</p><small>来源：桌面/技术实现/微信图片_20260514115934_447_13.jpg</small></article><article class="evidence-card"><a href="assets/evidence/28_tech_memory_layers.jpg" target="_blank"><img src="assets/evidence/28_tech_memory_layers.jpg" alt="认知心理学分层记忆截图"></a><h4>认知心理学分层记忆截图</h4><p>用于支撑身份层、叙事层、关键事件和对话摘要的分层设计。</p><small>来源：桌面/技术实现/微信图片_20260514120010_450_13.jpg</small></article><article class="evidence-card"><a href="assets/evidence/29_tech_memory_four_layer.jpg" target="_blank"><img src="assets/evidence/29_tech_memory_four_layer.jpg" alt="四层记忆与增强模块截图"></a><h4>四层记忆与增强模块截图</h4><p>用于支撑概览、关键事件、摘要、完整归档，以及实体索引、Profile 路由、自动去重等模块。</p><small>来源：桌面/技术实现/微信图片_20260514120814_470_13.jpg</small></article><article class="evidence-card"><a href="assets/evidence/30_tech_group_chat_gate.jpg" target="_blank"><img src="assets/evidence/30_tech_group_chat_gate.jpg" alt="群聊发言门控机制截图"></a><h4>群聊发言门控机制截图</h4><p>用于说明多角色群聊需要先判断谁该说话，避免所有角色一起回复造成围攻感。</p><small>来源：桌面/技术实现/微信图片_20260514121058_473_13.jpg</small></article><article class="evidence-card"><a href="assets/evidence/31_tech_life_tick.jpg" target="_blank"><img src="assets/evidence/31_tech_life_tick.jpg" alt="Life Tick 主动行为系统截图"></a><h4>Life Tick 主动行为系统截图</h4><p>用于支撑 AI 需要自己的生活节奏，主动问候应由状态和场景驱动。</p><small>来源：桌面/技术实现/微信图片_20260514121406_477_13.jpg</small></article><article class="evidence-card"><a href="assets/evidence/32_tech_cost_memory.jpg" target="_blank"><img src="assets/evidence/32_tech_cost_memory.jpg" alt="长期记忆成本结构截图"></a><h4>长期记忆成本结构截图</h4><p>用于说明长上下文和向量检索是记忆系统的主要成本压力。</p><small>来源：桌面/技术实现/微信图片_20260514121746_492_13.jpg</small></article></div></section>
+<section id="sources" class="card"><h2>信息来源</h2><p>桌面“技术实现”文件夹关键截图、旧 8 份 HTML 报告中技术章节、用户技术体验吐槽、Aimee 问卷中的技术能力验证项、MoMood / Sweete 应用商店评论 xlsx。截图中未能完全辨认的部分仅作素材展示，不作为独立结论。</p></section>
+
+  </main>
+  <footer class="footer">基于当前项目文件夹资料生成。未找到明确资料处均标注为资料不足，不编造来源。</footer>
+</body>
+</html>
